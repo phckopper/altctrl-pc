@@ -1,0 +1,19 @@
+.parent {
+  margin-top: 2rem;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #424249;
+}
+
+.title {
+  display: inline-flex;
+  font-weight: bold;
+  font-size: large;
+}
+
+.connectionString {
+  display: inline-flex;
+}

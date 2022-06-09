@@ -1,0 +1,32 @@
+.channelParent {
+  width: 24vw;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #424249;
+  border-radius: 1rem;
+
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.channelValue {
+  text-align: right;
+  font-family: monospace;
+}
+
+.channelName {
+  display: inline-flex;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.progressBar {
+  width: 100%;
+  display: inline-flex;
+  color: aquamarine
+}
