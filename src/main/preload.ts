@@ -1,5 +1,7 @@
 import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron';
 
+const { keyboard, Key } = require('@nut-tree/nut-js');
+
 export type Channels = 'ipc-example';
 
 contextBridge.exposeInMainWorld('electron', {
@@ -17,5 +19,17 @@ contextBridge.exposeInMainWorld('electron', {
     once(channel: Channels, func: (...args: unknown[]) => void) {
       ipcRenderer.once(channel, (_event, ...args) => func(...args));
     },
+  },
+  nutjs: {
+    async type(m: string) {
+      await keyboard.type(m);
+    },
+    async pressKey(key) {
+      await keyboard.pressKey(key);
+    },
+    async releaseKey(key) {
+      await keyboard.releaseKey(key);
+    },
+    Key,
   },
 });
