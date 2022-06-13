@@ -2,10 +2,9 @@ import './InputsView.css';
 import SensorView from './SensorView';
 
 const React = require('react');
-const Altctrl = require('altctrl');
 
 class InputsView extends React.Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     const socket = new WebSocket('ws://192.168.2.11:34567');
@@ -16,7 +15,7 @@ class InputsView extends React.Component {
 
   handleData(event: any) {
     const data = JSON.parse(event.data);
-    console.log(data);
+    // console.log(data);
     this.setState((prevState) => ({
       data: data,
     }));
