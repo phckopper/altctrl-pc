@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import RealChannel from './RealChannel';
+import BinaryChannel from './BinaryChannel';
 import './SensorView.css';
 
 const SensorView = (props: any) => {
@@ -16,7 +17,7 @@ const SensorView = (props: any) => {
         key={key}
       />
     ) : (
-      <div>Unsupported binary sensor</div>
+      <BinaryChannel name={key} value={data[key].value} key={key} />
     )
   );
   return (
