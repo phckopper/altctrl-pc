@@ -22,12 +22,15 @@ contextBridge.exposeInMainWorld('electron', {
   },
   nutjs: {
     async type(m: string) {
+      keyboard.config.autoDelayMs = 100;
       await keyboard.type(m);
     },
     async pressKey(key) {
+      keyboard.config.autoDelayMs = 0; // TODO: as nut.js uses setTimeout for this, it introduces a noticeable delay
       await keyboard.pressKey(key);
     },
     async releaseKey(key) {
+      keyboard.config.autoDelayMs = 0;
       await keyboard.releaseKey(key);
     },
     Key,
